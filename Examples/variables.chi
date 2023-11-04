@@ -1,0 +1,11 @@
+# Chi is not strongly typed but has implicit types: num, string, bool
+
+x := 42 # num
+
+y := "hello" # string
+
+z := true # bool
+
+# const variables can't change
+
+const pi := 3.14

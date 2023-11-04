@@ -1,0 +1,8 @@
+x := 12
+y := x + (5 - 2)
+z := x * y
+w := z / x
+v := 2 ^ 10
+u = v % 3
+
+# Chi doesn't have bitwise operators

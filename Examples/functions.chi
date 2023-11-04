@@ -1,0 +1,28 @@
+# functions are defined without any keyword
+
+# intended to always be inline
+f(x) := x + 10
+
+const pi := 3.14
+y := 20
+
+# functions are atomic
+# - they can only use variables from their argument list
+# - or global constants
+# - or constant literals
+# - or variables defined within the function (in case of multiline functions)
+
+g(x) := x + y # returns error
+h(x) := x + pi # works
+
+# this means f(6) always returns the same value, no matter the state, environment, or scope
+
+# for multiline functions, use scopes
+
+multiline_function() := {
+	x := 5
+	y := 10
+	# a non-assigment expression is automatically interpreted as a return statement
+	x + y
+}
+

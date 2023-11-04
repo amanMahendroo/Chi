@@ -1,0 +1,38 @@
+# define a set to loop over
+
+S := [1, 2, 3, 4, 5]
+
+print(x) for x in S
+
+f(x) := x ^ 2
+g(x) := x ^ 3
+
+# multiline
+
+{
+	z := f(x) + g(x)
+} for x in S
+
+# can be broken out of using break
+
+{
+	print(x)
+	x > 10 => break
+} for x in [1 : 100]
+
+# continue works
+
+
+{
+	print(x)
+	x % 3 = 0 => continue
+} for x in [1 : 100]
+
+# while loops work
+
+{
+	print(x)
+	x := x + 1
+} while x < 10
+
+

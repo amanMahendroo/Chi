@@ -1,0 +1,25 @@
+# if statements are identified by => (implies) symbol
+
+x := true
+
+y := 1
+x => y := 2 # runs only if x is true
+
+# can be used inline
+z := x => 5 else 6
+
+# multiple if else_if else blocks can be chained
+
+w := x => 10 else y = 2 => 20 else 30
+
+# spaces and new lines can be used for readability
+
+w := x =>
+	10
+else y = 2 =>
+	20
+else
+	30
+
+# may also use scopes "{}"
+

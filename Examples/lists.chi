@@ -1,0 +1,10 @@
+# Lists are a core data container
+
+# defined using [] square brackets
+
+S := [1, 2, 3, 4, 5]
+
+# bigger range
+
+T := [1 : 1000] # integers from 1 to 1000
+

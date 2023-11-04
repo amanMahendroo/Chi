@@ -1,0 +1,6 @@
+x := true
+y := false
+
+z := x * y # x and y
+w := x + y # x or y
+v := ~x # not x
