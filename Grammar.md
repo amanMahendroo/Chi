@@ -1,28 +1,24 @@
-```math
-\text{START} \rightarrow \text{STMT}
-\text{STMT} \rightarrow \$
-\text{STMT} \rightarrow \text{STMT} \text{STMT}
-
-\text{STMT} \rightarrow \text{ASMT}
-\text{ASMT} \rightarrow VAR := \text{EXPR}
-
-\text{STMT} \rightarrow \text{EXPR}
-
-\text{EXPR} \rightarrow (\text{EXPR})
-	\text{EXPR} \rightarrow \text{EXPR} \text{BIN\_OPER} \text{EXPR}
-	\text{EXPR} \rightarrow \text{UN\_OPER} \text{EXPR}
-
-	\begin{equation}
-	\text{\text{UN\_OPER}} \rightarrow
+$$\begin{align}
+	\text{START} &\rightarrow \text{STMT} \\
+	\text{STMT} &\rightarrow \begin{cases}
+		\text{STMT STMT} \\
+		\text{\$} \\
+		\text{ASMT} \\
+		\text{EXPR} \\
+	\end{cases} \\
+	\text{EXPR} &\rightarrow \begin{cases}
+		\text{(EXPR)} \\
+		\text{UN\_OPER EXPR} \\
+		\text{EXPR BIN\_OPER EXPR}
+	\end{cases}  \\
+	\text{ASMT} &\rightarrow VAR := \text{EXPR} \\
+	\text{UN\_OPER} &\rightarrow
 	\begin{cases}
-	-, ~
-	\end{cases}
-	\end{equation}
-
-	\begin{equation}
-	\text{\text{BIN\_OPER}} \rightarrow
+		-, ~
+	\end{cases} \\
+	\text{BIN\_OPER} &\rightarrow
 	\begin{cases}
-	+, - , *, /, =, >, <, >=, <=, ~=, %
+		+, - , *, /, =, >, <, >=, <=, ~=, %
 	\end{cases}
-	\end{equation}
-```
+\end{align}
+$$
