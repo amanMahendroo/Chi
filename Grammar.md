@@ -1,4 +1,4 @@
-$$
+```math
 \begin{align}
 START \rightarrow STMT
 STMT \rightarrow \$
@@ -26,5 +26,6 @@ EXPR \rightarrow (EXPR)
 	+, - , *, /, =, >, <, >=, <=, ~=, %
 	\end{cases}
 	\end{equation}
-	\end{align}
+\end{align}
 	$$
+```
