@@ -1,27 +1,27 @@
 ```math
 \begin{align}
-START \rightarrow STMT
-STMT \rightarrow \$
-STMT \rightarrow STMT STMT
+\text{START} \rightarrow \text{STMT}
+\text{STMT} \rightarrow \$
+\text{STMT} \rightarrow \text{STMT} \text{STMT}
 
-STMT \rightarrow ASMT
-ASMT \rightarrow VAR := EXPR
+\text{STMT} \rightarrow \text{ASMT}
+\text{ASMT} \rightarrow VAR := \text{EXPR}
 
-STMT \rightarrow EXPR
+\text{STMT} \rightarrow \text{EXPR}
 
-EXPR \rightarrow (EXPR)
-	EXPR \rightarrow EXPR BIN_OPER EXPR
-	EXPR \rightarrow UN_OPER EXPR
+\text{EXPR} \rightarrow (\text{EXPR})
+	\text{EXPR} \rightarrow \text{EXPR} \text{BIN_OPER} \text{EXPR}
+	\text{EXPR} \rightarrow \text{UN_OPER} \text{EXPR}
 
 	\begin{equation}
-	\text{UN_OPER} \rightarrow
+	\text{\text{UN_OPER}} \rightarrow
 	\begin{cases}
 	-, ~
 	\end{cases}
 	\end{equation}
 
 	\begin{equation}
-	\text{BIN_OPER} \rightarrow
+	\text{\text{BIN_OPER}} \rightarrow
 	\begin{cases}
 	+, - , *, /, =, >, <, >=, <=, ~=, %
 	\end{cases}
