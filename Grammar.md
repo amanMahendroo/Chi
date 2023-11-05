@@ -1,5 +1,4 @@
 ```math
-\begin{align}
 \text{START} \rightarrow \text{STMT}
 \text{STMT} \rightarrow \$
 \text{STMT} \rightarrow \text{STMT} \text{STMT}
@@ -26,6 +25,4 @@
 	+, - , *, /, =, >, <, >=, <=, ~=, %
 	\end{cases}
 	\end{equation}
-\end{align}
-	$$
 ```
