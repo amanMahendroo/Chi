@@ -1,6 +1,7 @@
 # if statements are identified by => (implies) symbol
 
 x := true
+x := false
 
 y := 1
 x => y := 2 # runs only if x is true
