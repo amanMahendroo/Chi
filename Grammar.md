@@ -1,5 +1,5 @@
 ```math
-begin{align}
+\begin{align}
 	\text{START} &\rightarrow \text{STMT} \\
 	\text{STMT} &\rightarrow \begin{cases}
 		\text{STMT STMT} \\
