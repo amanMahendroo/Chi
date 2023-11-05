@@ -10,18 +10,18 @@
 \text{STMT} \rightarrow \text{EXPR}
 
 \text{EXPR} \rightarrow (\text{EXPR})
-	\text{EXPR} \rightarrow \text{EXPR} \text{BIN_OPER} \text{EXPR}
-	\text{EXPR} \rightarrow \text{UN_OPER} \text{EXPR}
+	\text{EXPR} \rightarrow \text{EXPR} \text{BIN\_OPER} \text{EXPR}
+	\text{EXPR} \rightarrow \text{UN\_OPER} \text{EXPR}
 
 	\begin{equation}
-	\text{\text{UN_OPER}} \rightarrow
+	\text{\text{UN\_OPER}} \rightarrow
 	\begin{cases}
 	-, ~
 	\end{cases}
 	\end{equation}
 
 	\begin{equation}
-	\text{\text{BIN_OPER}} \rightarrow
+	\text{\text{BIN\_OPER}} \rightarrow
 	\begin{cases}
 	+, - , *, /, =, >, <, >=, <=, ~=, %
 	\end{cases}
