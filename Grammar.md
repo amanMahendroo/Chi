@@ -15,11 +15,11 @@
 	\text{ASMT} &\rightarrow VAR := \text{EXPR} \\
 	\text{UN\_OPER} &\rightarrow
 	\begin{cases}
-		-, ~
+		+, -, \~
 	\end{cases} \\
 	\text{BIN\_OPER} &\rightarrow
 	\begin{cases}
-		+, - , *, /, =, >, <, >=, <=, ~=, %
+		+, - , *, /, =, >, <, >=, <=, \~=, \%, \^
 	\end{cases}
 \end{align}
 ```
