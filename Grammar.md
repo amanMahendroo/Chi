@@ -53,7 +53,7 @@
 		\text{id ( ARGS ) := EXPR}
 	\end{cases} \\
 	\text{ARGS} &\rightarrow 
-	\begin{cases} \\
+	\begin{cases} 
 		\text{id} \\
 		\text{id , ARGS}
 	\end{cases}
