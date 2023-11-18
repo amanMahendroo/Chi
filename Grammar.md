@@ -24,6 +24,7 @@
 ```math
 \begin{align}
 	\text{EXPR} &\rightarrow \begin{cases}
+		\text{id} \\
 		\text{(EXPR)} \\
 		\text{UN\_OPER EXPR} \\
 		\text{EXPR BIN\_OPER EXPR} \\
