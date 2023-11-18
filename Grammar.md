@@ -11,10 +11,10 @@
 		\text{\$} \\
 		\text{ASMT} \\
 		\text{EXPR} \\
-		\text{IF_STMT} \\
-		\text{FOR_LOOP} \\
-		\text{WHILE_LOOP} \\
-		\text{PRINT_STMT}
+		\text{IF\_STMT} \\
+		\text{FOR\_LOOP} \\
+		\text{WHILE\_LOOP} \\
+		\text{PRINT\_STMT}
 	\end{cases} \\
 \end{align}
 ```
@@ -51,7 +51,7 @@
 		\text{const ASMT} \\
 		\text{id := EXPR} \\
 		\text{id ( ARGS ) := EXPR}
-	\end{cases}
+	\end{cases} \\
 	\text{ARGS} &\rightarrow 
 	\begin{cases} \\
 		\text{id} \\
@@ -64,7 +64,7 @@
 
 ```math
 \begin{align}
-	\text{EXPR} &\rightarrow \text{{ STMT }}
+	\text{EXPR} &\rightarrow \text{\{ STMT \}}
 \end{align}
 ```
 
@@ -85,7 +85,7 @@
 
 ```math
 \begin{align}
-	\text{FOR_LOOP} &\rightarrow \text{EXPR for id in id}
+	\text{FOR\_LOOP} &\rightarrow \text{EXPR for id in id}
 \end{align}
 ```
 
@@ -93,7 +93,7 @@
 
 ```math
 \begin{align}
-	\text{WHILE_LOOP} &\rightarrow \text{EXPR while EXPR}
+	\text{WHILE\_LOOP} &\rightarrow \text{EXPR while EXPR}
 \end{align}
 ```
 
@@ -101,6 +101,6 @@
 
 ```math
 \begin{align}
-	\text{PRINT_STMT} &\rightarrow \text{print EXPR}
+	\text{PRINT\_STMT} &\rightarrow \text{print EXPR}
 \end{align}
 ```
