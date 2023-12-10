@@ -15,7 +15,8 @@
 		\text{IF\_STMT} \\
 		\text{FOR\_LOOP} \\
 		\text{WHILE\_LOOP} \\
-		\text{PRINT\_STMT}
+		\text{PRINT\_STMT} \\
+		\text{INPUT\_STMT}
 	\end{cases} \\
 \end{align}
 ```
@@ -28,10 +29,8 @@
 		\text{id, const} \\
 		\text{(EXPR)} \\
 		\text{UN\_OPER EXPR} \\
-		\text{EXPR BIN\_OPER EXPR} \\
 		\text{id EXPR'} \\
 		\text{const EXPR'} \\
-		\text{INPUT\_STMT} \\
 		\text{break} \\
 		\text{continue} \\
 		\text{nil}
