@@ -31,7 +31,7 @@
 		\text{EXPR BIN\_OPER EXPR} \\
 		\text{id EXPR'} \\
 		\text{const EXPR'} \\
-		\text{INPUT_STMT} \\
+		\text{INPUT\_STMT} \\
 		\text{break} \\
 		\text{continue} \\
 		\text{nil}
@@ -73,8 +73,8 @@
 	\text{IF\_STMT} &\rightarrow 
 	\begin{cases}
 		\text{IF} &\rightarrow \text{EXPR => STMT ELSE\_IF ELSE} \\
-		\text{ELSE\_IF} &\rightarrow \text{else EXPR => STMT ELSE\_IF, \epsilon} \\
-		\text{ELSE} &\rightarrow \text{else STMT, \epsilon}
+		\text{ELSE\_IF} &\rightarrow \text{else EXPR => STMT ELSE\_IF,} \epsilon \\
+		\text{ELSE} &\rightarrow \text{else STMT,} \epsilon
 	\end{cases} \\
 \end{align}
 ```
@@ -108,6 +108,6 @@
 		\text{setfin stdin}, \\
 		\text{setfout stdout} \\
 	\end{cases} \\
-	\text{CLEAR_FILE} &\rightarrow \text{clearf}
+	\text{CLEAR\_FILE} &\rightarrow \text{clearf}
 \end{align}
 ```
