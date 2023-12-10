@@ -36,7 +36,7 @@
 		\text{continue} \\
 		\text{nil}
 	\end{cases}  \\
-	\text{EXPR'} &\rightarrow \text{BIN\_OPER EXPR EXPR', \epsilon}
+	\text{EXPR'} &\rightarrow \text{BIN\_OPER EXPR EXPR',} \epsilon \\
 	\text{UN\_OPER} &\rightarrow
 	\begin{cases}
 		+, -, \~
@@ -101,7 +101,7 @@
 \begin{align}
 	\text{PRINT\_STMT} &\rightarrow \text{print EXPR}
 	\text{INPUT\_STMT} &\rightarrow \text{input}
-	\text{SET_FILE} &\rightarrow 
+	\text{SET\_FILE} &\rightarrow 
 	\begin{cases}
 		\text{setfin const::string}, \\
 		\text{setfout const::string}, \\
