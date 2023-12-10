@@ -99,8 +99,8 @@
 
 ```math
 \begin{align}
-	\text{PRINT\_STMT} &\rightarrow \text{print EXPR}
-	\text{INPUT\_STMT} &\rightarrow \text{input}
+	\text{PRINT\_STMT} &\rightarrow \text{print EXPR} \\
+	\text{INPUT\_STMT} &\rightarrow \text{input} \\
 	\text{SET\_FILE} &\rightarrow 
 	\begin{cases}
 		\text{setfin const::string}, \\
