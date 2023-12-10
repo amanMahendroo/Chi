@@ -5,7 +5,8 @@
 	\text{START} &\rightarrow \text{STMT} \\
 	\text{STMT} &\rightarrow \begin{cases}
 		\text{STMT'} \\
-		\text{STMT' STMT} 
+		\text{STMT' STMT} \\
+		\text{\{ STMT \}}
 	\end{cases} \\
 	\text{STMT'} &\rightarrow \begin{cases}
 		\text{\$} \\
@@ -24,14 +25,18 @@
 ```math
 \begin{align}
 	\text{EXPR} &\rightarrow \begin{cases}
-		\text{id} \\
+		\text{id, const} \\
 		\text{(EXPR)} \\
 		\text{UN\_OPER EXPR} \\
 		\text{EXPR BIN\_OPER EXPR} \\
+		\text{id EXPR'} \\
+		\text{const EXPR'} \\
+		\text{INPUT_STMT} \\
 		\text{break} \\
 		\text{continue} \\
 		\text{nil}
 	\end{cases}  \\
+	\text{EXPR'} &\rightarrow \text{BIN\_OPER EXPR EXPR', \epsilon}
 	\text{UN\_OPER} &\rightarrow
 	\begin{cases}
 		+, -, \~
@@ -61,24 +66,16 @@
 \end{align}
 ```
 
-# Scope expression
-
-```math
-\begin{align}
-	\text{EXPR} &\rightarrow \text{\{ STMT \}}
-\end{align}
-```
-
 # If .. else if .. else
 
 ```math
 \begin{align}
 	\text{IF\_STMT} &\rightarrow 
 	\begin{cases}
-		\text{EXPR => STMT} \\
-		\text{IF\_STMT else STMT} \\
-		\text{IF\_STMT else IF\_STMT}
-	\end{cases}
+		\text{IF} &\rightarrow \text{EXPR => STMT ELSE\_IF ELSE} \\
+		\text{ELSE\_IF} &\rightarrow \text{else EXPR => STMT ELSE\_IF, \epsilon} \\
+		\text{ELSE} &\rightarrow \text{else STMT, \epsilon}
+	\end{cases} \\
 \end{align}
 ```
 
@@ -86,7 +83,7 @@
 
 ```math
 \begin{align}
-	\text{FOR\_LOOP} &\rightarrow \text{EXPR for id in id}
+	\text{FOR\_LOOP} &\rightarrow \text{STMT for id in id}
 \end{align}
 ```
 
@@ -94,7 +91,7 @@
 
 ```math
 \begin{align}
-	\text{WHILE\_LOOP} &\rightarrow \text{EXPR while EXPR}
+	\text{WHILE\_LOOP} &\rightarrow \text{STMT while EXPR}
 \end{align}
 ```
 
@@ -103,5 +100,14 @@
 ```math
 \begin{align}
 	\text{PRINT\_STMT} &\rightarrow \text{print EXPR}
+	\text{INPUT\_STMT} &\rightarrow \text{input}
+	\text{SET_FILE} &\rightarrow 
+	\begin{cases}
+		\text{setfin const::string}, \\
+		\text{setfout const::string}, \\
+		\text{setfin stdin}, \\
+		\text{setfout stdout} \\
+	\end{cases} \\
+	\text{CLEAR_FILE} &\rightarrow \text{clearf}
 \end{align}
 ```
