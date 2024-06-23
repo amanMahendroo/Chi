@@ -74,7 +74,7 @@
 \begin{align}
 	\text{IF} &\rightarrow \text{=> STMT ELSE\IF} \\
 	\text{ELSE\_IF} &\rightarrow \text{elif EXPR => STMT ELSE\_IF}, \epsilon \\
-	\text{ELSE} &\rightarrow \text{else STMT}, \epsilon
+	\text{ELSE} &\rightarrow \text{else STMT}, \text{\epsilon}
 \end{align}
 ```
 
