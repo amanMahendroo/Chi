@@ -4,20 +4,16 @@
 \begin{align}
 	\text{START} &\rightarrow \text{STMT} \\
 	\text{STMT} &\rightarrow \begin{cases}
-		\text{STMT'} \\
-		\text{STMT' STMT} \\
-		\text{\{ STMT \}}
+		\text{EXPR DELTA STMT'} \\
+		\text{\epsilon}
 	\end{cases} \\
-	\text{STMT'} &\rightarrow \begin{cases}
-		\text{\$} \\
-		\text{ASMT} \\
-		\text{EXPR} \\
-		\text{IF\_STMT} \\
-		\text{FOR\_LOOP} \\
-		\text{WHILE\_LOOP} \\
-		\text{PRINT\_STMT} \\
-		\text{INPUT\_STMT}
-	\end{cases} \\
+
+	\text{DELTA} &rightarrow \begin{cases}
+		\text{FOR} \\
+		\text{WHILE} \\
+		\text{IF} \\
+		\text{\epsilon}
+	\end{cases}
 \end{align}
 ```
 
@@ -26,55 +22,33 @@
 ```math
 \begin{align}
 	\text{EXPR} &\rightarrow \begin{cases}
-		\text{id, const} \\
 		\text{(EXPR)} \\
 		\text{UN\_OPER EXPR} \\
-		\text{id EXPR'} \\
-		\text{const EXPR'} \\
-		\text{break} \\
-		\text{continue} \\
-		\text{nil}
+		\text{id EXPR_ID} \\
+		\text{lit EXPR_LIT} \\
+		\text{break, continue, nil} \\
+		\text{\{STMT\}}
 	\end{cases}  \\
-	\text{EXPR'} &\rightarrow \text{BIN\_OPER EXPR EXPR',} \epsilon \\
-	\text{UN\_OPER} &\rightarrow
-	\begin{cases}
-		+, -, \~
+	
+	\text{EXPR_ID} &\rightarrow \begin{cases}
+		\text{BIN\_OPER EXPR} \\
+		\text{:= EXPR} \\
+		\text{=> STMT ELSE_IF ELSE} \\
+		\text{(ARGS) EXPR_ID} \\
+		\epsilon
 	\end{cases} \\
-	\text{BIN\_OPER} &\rightarrow
-	\begin{cases}
-		+, - , *, /, =, >, <, >=, <=, \~=, \%, \^
-	\end{cases}
-\end{align}
-```
 
-# Assignment
-
-```math
-\begin{align}
-	\text{ASMT} &\rightarrow
-	\begin{cases}
-		\text{const ASMT} \\
-		\text{id := EXPR} \\
-		\text{id ( ARGS ) := EXPR}
+	\text{EXPR_LIT} &\rightarrow \begin{cases}
+		\text{BIN\_OPER EXPR} \\
+		\text{=> STMT ELSE_IF ELSE} \\
+		\epsilon
 	\end{cases} \\
-	\text{ARGS} &\rightarrow 
-	\begin{cases} 
-		\text{id} \\
-		\text{id , ARGS}
-	\end{cases}
-\end{align}
-```
 
-# If .. else if .. else
+	\text{ARGS} &\rightarrow \text{\epsilon}, \text{EXPR ARGS'}
+	\text{ARGS'} &\rightarrow \text{, ARGS}
 
-```math
-\begin{align}
-	\text{IF\_STMT} &\rightarrow 
-	\begin{cases}
-		\text{IF} &\rightarrow \text{EXPR => STMT ELSE\_IF ELSE} \\
-		\text{ELSE\_IF} &\rightarrow \text{else EXPR => STMT ELSE\_IF,} \epsilon \\
-		\text{ELSE} &\rightarrow \text{else STMT,} \epsilon
-	\end{cases} \\
+	\text{UN\_OPER} &\rightarrow +, -, \~ \\
+	\text{BIN\_OPER} &\rightarrow +, - , *, /, =, >, <, >=, <=, \~=, \%, \^ \\
 \end{align}
 ```
 
@@ -82,7 +56,7 @@
 
 ```math
 \begin{align}
-	\text{FOR\_LOOP} &\rightarrow \text{STMT for id in id}
+	\text{FOR\_LOOP} &\rightarrow \text{for id in EXPR}
 \end{align}
 ```
 
@@ -90,7 +64,17 @@
 
 ```math
 \begin{align}
-	\text{WHILE\_LOOP} &\rightarrow \text{STMT while EXPR}
+	\text{WHILE\_LOOP} &\rightarrow \text{while EXPR}
+\end{align}
+```
+
+# If..elif..else
+
+```math
+\begin{align}
+	\text{IF} &\rightarrow \text{=> STMT ELSE\IF} \\
+	\text{ELSE\_IF} &\rightarrow \text{elif EXPR => STMT ELSE\_IF}, \epsilon \\
+	\text{ELSE} &\rightarrow \text{else STMT}, \epsilon
 \end{align}
 ```
 
@@ -105,7 +89,7 @@
 		\text{setfin const::string}, \\
 		\text{setfout const::string}, \\
 		\text{setfin stdin}, \\
-		\text{setfout stdout} \\
+		\text{setfout stdout}
 	\end{cases} \\
 	\text{CLEAR\_FILE} &\rightarrow \text{clearf}
 \end{align}
