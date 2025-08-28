@@ -1,6 +1,6 @@
 # Compiler and compiler flags
 CXX = g++
-CXXFLAGS = -g -std=c++14 -Wall -Wextra
+CXXFLAGS = -g -std=c++17 -Wall -Wextra
 
 # Source files and output binary
 #TODO: Change name of source file

@@ -4,7 +4,7 @@
 
 using namespace Lemmatizer;
 
-[[nodiscard]] std::vector<Token> Lemmatizer::lemmatize(const std::vector<std::string> &input) const
+[[nodiscard]] std::vector<Token> lemmatize(const std::vector<std::string> &input)
 {
 	std::vector<Token> tokens;
 

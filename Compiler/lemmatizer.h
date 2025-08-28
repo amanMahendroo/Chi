@@ -32,6 +32,7 @@ namespace Lemmatizer {
 		logical_not, // OPERATOR - LOGICAL
 		walrus,		 // ASSIGNMENT
 		kw_else,
+		kw_elif,
 		kw_for,
 		kw_while,
 		kw_print,
@@ -54,6 +55,7 @@ namespace Lemmatizer {
 
 	const std::map<std::string, TokenValue> keyword_map({
 		{"else", kw_else},
+		{"elif", kw_elif},
 		{"for", kw_for},
 		{"while", kw_while},
 		{"print", kw_print},
